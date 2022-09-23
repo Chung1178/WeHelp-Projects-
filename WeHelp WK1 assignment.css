@@ -1,0 +1,209 @@
+body{font-size:20px}
+img{vertical-align:bottom;}
+.frame{
+    display:flex; /*讓項目水平*/
+    align-items: center;/*home跟menu垂直置中*/
+    margin: 10px;
+    }
+.home{
+    flex:none; /*固定配置*/
+    width:100px;
+    text-align: center;
+    text-align: left;
+        }
+.menu{
+    display: flex;  
+    flex:auto;
+    justify-content: flex-end; /*使items水平靠右*/
+    }
+.desktop-item{
+    flex:none;
+    width:100px;
+    margin-left: 10px;
+    text-align: center;
+    display: block;
+    }
+.mobile-item{
+    flex:none;
+    text-align: center;
+    display: none;
+    }
+.welcome{
+    display: flex;
+    flex:auto;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    height: 300px;
+}
+.welcome-text{
+    flex:none;
+    width:360px;
+    font-size: 2em;
+    text-align: center;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-content{
+    flex:none;
+    width:1200px;
+}
+.promotion-content{
+    display: flex;
+    flex:none;
+    margin-bottom: 20px;
+    }
+.promotion1{
+    display: flex;
+    width:50%;
+    height: 50px;
+    margin-right: 10px;
+    background-color: lightblue;
+}
+.promotion2{
+    display:flex; /*使圖片及文字區塊水平排列*/
+    width:50%;
+    height: 50px;
+    margin-left: 10px;
+    background-color: lightblue;
+}
+.promotion-graph{
+    flex:none;
+    width: 80px; /*固定圖片區塊寬度80*/
+}
+.promotion-textarea{
+    display:flex;
+    flex:auto;
+    align-items: center;   
+}
+.promotion-text{
+    flex:none;
+    width:100px;
+    text-align: center;
+    margin: 10px;
+}
+.title-content{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.left-title{
+    flex:auto;
+    width:285px;
+    margin-right: 10px;
+}
+.middle-title{
+    flex:auto;
+    width:285px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.right-title{
+    flex:auto;
+    width:285px;
+    margin-left: 10px;
+}
+.title-graph{
+    flex:none;
+    width: 285px; /*固定圖片區塊寬度285*/
+    height:100%;
+}
+.title-textarea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:none;
+    background-color:lightblue;
+}
+.title-text{
+    flex:none;
+    width:100px;
+    text-align: center;
+    margin:10px;
+}
+@media (max-width:1200px){
+    .main-content{
+        width:90%;
+    }
+    .promotion-content{
+        margin-bottom: 0px;
+    }
+    .title-content{
+        flex-wrap: wrap;
+        margin-bottom: 0px;
+    }
+    .left-title{
+        width:45%;
+        margin-right: 20px;
+        margin-top:20px;
+    }
+    .middle-title{
+        width:45%;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top:20px;
+    }
+    .right-title{
+        width:45%;
+        margin-left: 20px;
+        margin-top:20px;
+    }
+    .title-graph{
+        flex:none;
+        width:100%;
+        height:100%;
+    }
+}
+
+@media (max-width:600px){
+    .welcome-text{
+        font-size: 20px;
+    }
+    .desktop-item{
+        display: none;
+    }
+    .mobile-item{
+        display: block;
+    }
+    .promotion-content{
+        flex-wrap: wrap;
+        margin-bottom: 0px;
+    }
+    .promotion1{
+        width:100%;
+        margin-right: 0px;
+        margin-top:20px;
+    }
+    .promotion2{
+        width:100%;
+        margin-left: 0px;
+        margin-top:20px;
+    }
+    .title-content{
+        flex-wrap: wrap;
+        margin-bottom: 0px;
+    }
+    .left-title{
+        width:100%;
+        margin-right: 0px;
+        margin-top:20px;
+        background-color: antiquewhite;
+    }
+    .middle-title{
+        width:100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top:20px;
+        background-color: antiquewhite;
+    }
+    .right-title{
+        width:100%;
+        margin-left: 0px;
+        margin-top:20px;
+        background-color: antiquewhite;
+    }
+
+}
