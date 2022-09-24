@@ -1,4 +1,8 @@
-body{font-size:20px}
+body{
+    font-size:20px;
+    margin:0;
+    padding:0;
+}
 img{vertical-align:bottom;}
 .frame{
     display:flex; /*讓項目水平*/
