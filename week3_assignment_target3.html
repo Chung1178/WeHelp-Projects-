@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <title>Chung WeHelp Week3 assignment3</title>
+    <link rel="stylesheet" type="text/css" href="week3_assignment_target3.css" />
+  </head>
+  <body>
+        <div class="frame">
+            <div class="home">My website</div>
+            <div class="menu">
+                <div class="desktop-item">item 1</div>
+                <div class="desktop-item">item 2</div>
+                <div class="desktop-item">item 3</div>
+                <div class="desktop-item">item 4</div>
+                <div class="mobile-item">
+                    <img src="menu.png" width="30" height="30" />
+                </div>
+            </div>
+        </div>
+        <div class="welcome">
+            <div class="welcome-text">Welcome to MyHome</div>
+        </div>
+        <br/>
+        <div class="main">
+            <div class="main-content">
+                <div class="promotion-content">
+                    <div class="promotion1">
+                        <div class="promotion-graph" id="graph1"></div>
+                        <div class="promotion-textarea" id="textarea1"></div>
+                    </div>
+                    <div class="promotion2">
+                        <div class="promotion-graph" id="graph2"></div>
+                        <div class="promotion-textarea" id="textarea2"></div>
+                    </div>
+                </div>
+                <div class="title-content">
+                    <div class="left-title">
+                        <div class="title-graph" id="graph3"></div>
+                        <div class="title-textarea" id="textarea3"></div>
+                    </div>
+                    <div class="middle-title">
+                        <div class="title-graph" id="graph4"></div>
+                        <div class="title-textarea" id="textarea4"></div>
+                    </div>
+                    <div class="middle-title">
+                        <div class="title-graph" id="graph5"></div>
+                        <div class="title-textarea" id="textarea5"></div>
+                    </div>
+                    <div class="right-title">
+                        <div class="title-graph" id="graph6"></div>
+                        <div class="title-textarea" id="textarea6"></div>
+                    </div>
+                </div>
+                <div class="title-content">
+                    <div class="left-title">
+                        <div class="title-graph" id="graph7"></div>
+                        <div class="title-textarea" id="textarea7"></div>
+                    </div>
+                    <div class="middle-title">
+                        <div class="title-graph" id="graph8"></div>
+                        <div class="title-textarea" id="textarea8"></div>
+                    </div>
+                    <div class="middle-title">
+                        <div class="title-graph" id="graph9"></div>
+                        <div class="title-textarea" id="textarea9"></div>
+                    </div>
+                    <div class="right-title">
+                        <div class="title-graph" id="graph10"></div>
+                        <div class="title-textarea" id="textarea10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+        <script>
+            function getData(){
+                fetch("https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json").then(function(response){
+                        return response.json();
+                    }).then(function(data){
+                        let info=data["result"]["results"];
+                            for (let i=0; i<10; i++){
+                                let place=info[i]["stitle"];
+                                if (i==0){
+                                    let textArea=document.getElementById("textarea1");
+                                    let contentArea=document.createElement("div");
+                                    contentArea.className="text";
+                                    newContent=document.createTextNode(place);
+                                    contentArea.appendChild(newContent);
+                                    textArea.appendChild(contentArea);
+                                }
+                                else if (i==1){
+                                    let textArea=document.getElementById("textarea2");
+                                    let contentArea=document.createElement("div");
+                                    contentArea.className="text";
+                                    newContent=document.createTextNode(place);
+                                    contentArea.appendChild(newContent);
+                                    textArea.appendChild(contentArea);
+                                }
+                                else if (i==2){
+                                    let textArea=document.getElementById("textarea3");
+                                    let contentArea=document.createElement("div");
+                                    contentArea.className="text";
+                                    newContent=document.createTextNode(place);
+                                    contentArea.appendChild(newContent);
+                                    textArea.appendChild(contentArea);
+                                }
+                                else if (i==3){
+                                    let textArea=document.getElementById("textarea4");
+                                    let contentArea=document.createElement("div");
+                                    contentArea.className="text";
+                                    newContent=document.createTextNode(place);
+                                    contentArea.appendChild(newContent);
+                                    textArea.appendChild(contentArea);
+                                }
+                                else if (i==4){
+                                    let textArea=document.getElementById("textarea5");
+                                    let contentArea=document.createElement("div");
+                                    contentArea.className="text";
+                                    newContent=document.createTextNode(place);
+                                    contentArea.appendChild(newContent);
+                                    textArea.appendChild(contentArea);
+                                }
+                                else if (i==5){
+                                    let textArea=document.getElementById("textarea6");
+                                    let contentArea=document.createElement("div");
+                                    contentArea.className="text";
+                                    newContent=document.createTextNode(place);
+                                    contentArea.appendChild(newContent);
+                                    textArea.appendChild(contentArea);
+                                }
+                                else if (i==6){
+                                    let textArea=document.getElementById("textarea7");
+                                    let contentArea=document.createElement("div");
+                                    contentArea.className="text";
+                                    newContent=document.createTextNode(place);
+                                    contentArea.appendChild(newContent);
+                                    textArea.appendChild(contentArea);
+                                }
+                                else if (i==7){
+                                    let textArea=document.getElementById("textarea8");
+                                    let contentArea=document.createElement("div");
+                                    contentArea.className="text";
+                                    newContent=document.createTextNode(place);
+                                    contentArea.appendChild(newContent);
+                                    textArea.appendChild(contentArea);
+                                }
+                                else if (i==8){
+                                    let textArea=document.getElementById("textarea9");
+                                    let contentArea=document.createElement("div");
+                                    contentArea.className="text";
+                                    newContent=document.createTextNode(place);
+                                    contentArea.appendChild(newContent);
+                                    textArea.appendChild(contentArea);
+                                }
+                                else {
+                                    let textArea=document.getElementById("textarea10");
+                                    let contentArea=document.createElement("div");
+                                    contentArea.className="text";
+                                    newContent=document.createTextNode(place);
+                                    contentArea.appendChild(newContent);
+                                    textArea.appendChild(contentArea);
+                                }
+                                      
+                            }
+
+                            for (let j=0; j<10; j++){
+                                let jpg=info[j]["file"].split("https");
+                                let firstjpg="https"+jpg[1];
+                                if (j==0){
+                                    let graphArea=document.getElementById("graph1");
+                                    let graph=document.createElement("img");
+                                    graph.className="promotion-graph";
+                                    graph.setAttribute("src", firstjpg);
+                                    graphArea.appendChild(graph);
+                                }
+                                else if (j==1){
+                                    let graphArea=document.getElementById("graph2");
+                                    let graph=document.createElement("img");
+                                    graph.className="promotion-graph";
+                                    graph.setAttribute("src", firstjpg);
+                                    graphArea.appendChild(graph);
+                                }
+                                else if (j==2){
+                                    let graphArea=document.getElementById("graph3");
+                                    let graph=document.createElement("img");
+                                    graph.className="title-graph";
+                                    graph.setAttribute("src", firstjpg);
+                                    graphArea.appendChild(graph);
+                                }
+                                else if (j==3){
+                                    let graphArea=document.getElementById("graph4");
+                                    let graph=document.createElement("img");
+                                    graph.className="title-graph";
+                                    graph.setAttribute("src", firstjpg);
+                                    graphArea.appendChild(graph);
+                                }
+                                else if (j==4){
+                                    let graphArea=document.getElementById("graph5");
+                                    let graph=document.createElement("img");
+                                    graph.className="title-graph";
+                                    graph.setAttribute("src", firstjpg);
+                                    graphArea.appendChild(graph);
+                                }
+                                else if (j==5){
+                                    let graphArea=document.getElementById("graph6");
+                                    let graph=document.createElement("img");
+                                    graph.className="title-graph";
+                                    graph.setAttribute("src", firstjpg);
+                                    graphArea.appendChild(graph);
+                                }
+                                else if (j==6){
+                                    let graphArea=document.getElementById("graph7");
+                                    let graph=document.createElement("img");
+                                    graph.className="title-graph";
+                                    graph.setAttribute("src", firstjpg);
+                                    graphArea.appendChild(graph);
+                                }
+                                else if (j==7){
+                                    let graphArea=document.getElementById("graph8");
+                                    let graph=document.createElement("img");
+                                    graph.className="title-graph";
+                                    graph.setAttribute("src", firstjpg);
+                                    graphArea.appendChild(graph);
+                                }
+                                else if (j==8){
+                                    let graphArea=document.getElementById("graph9");
+                                    let graph=document.createElement("img");
+                                    graph.className="title-graph";
+                                    graph.setAttribute("src", firstjpg);
+                                    graphArea.appendChild(graph);
+                                }
+                                else {
+                                    let graphArea=document.getElementById("graph10");
+                                    let graph=document.createElement("img");
+                                    graph.className="title-graph";
+                                    graph.setAttribute("src", firstjpg);
+                                    graphArea.appendChild(graph);
+                                }
+                                      
+                            }
+                          
+                    })
+            }
+            getData();
+        </script>
+  </body>
+</html>
