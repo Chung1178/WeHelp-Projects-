@@ -74,176 +74,46 @@
             </div>
         </div>
      
-        <script>
-            function getData(){
-                fetch("https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json").then(function(response){
+       <script>
+            fetch("https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json").then(function(response){
                         return response.json();
                     }).then(function(data){
                         let info=data["result"]["results"];
                             for (let i=0; i<10; i++){
                                 let place=info[i]["stitle"];
-                                if (i==0){
-                                    let textArea=document.getElementById("textarea1");
-                                    let contentArea=document.createElement("div");
-                                    contentArea.className="text";
-                                    newContent=document.createTextNode(place);
-                                    contentArea.appendChild(newContent);
-                                    textArea.appendChild(contentArea);
-                                }
-                                else if (i==1){
-                                    let textArea=document.getElementById("textarea2");
-                                    let contentArea=document.createElement("div");
-                                    contentArea.className="text";
-                                    newContent=document.createTextNode(place);
-                                    contentArea.appendChild(newContent);
-                                    textArea.appendChild(contentArea);
-                                }
-                                else if (i==2){
-                                    let textArea=document.getElementById("textarea3");
-                                    let contentArea=document.createElement("div");
-                                    contentArea.className="text";
-                                    newContent=document.createTextNode(place);
-                                    contentArea.appendChild(newContent);
-                                    textArea.appendChild(contentArea);
-                                }
-                                else if (i==3){
-                                    let textArea=document.getElementById("textarea4");
-                                    let contentArea=document.createElement("div");
-                                    contentArea.className="text";
-                                    newContent=document.createTextNode(place);
-                                    contentArea.appendChild(newContent);
-                                    textArea.appendChild(contentArea);
-                                }
-                                else if (i==4){
-                                    let textArea=document.getElementById("textarea5");
-                                    let contentArea=document.createElement("div");
-                                    contentArea.className="text";
-                                    newContent=document.createTextNode(place);
-                                    contentArea.appendChild(newContent);
-                                    textArea.appendChild(contentArea);
-                                }
-                                else if (i==5){
-                                    let textArea=document.getElementById("textarea6");
-                                    let contentArea=document.createElement("div");
-                                    contentArea.className="text";
-                                    newContent=document.createTextNode(place);
-                                    contentArea.appendChild(newContent);
-                                    textArea.appendChild(contentArea);
-                                }
-                                else if (i==6){
-                                    let textArea=document.getElementById("textarea7");
-                                    let contentArea=document.createElement("div");
-                                    contentArea.className="text";
-                                    newContent=document.createTextNode(place);
-                                    contentArea.appendChild(newContent);
-                                    textArea.appendChild(contentArea);
-                                }
-                                else if (i==7){
-                                    let textArea=document.getElementById("textarea8");
-                                    let contentArea=document.createElement("div");
-                                    contentArea.className="text";
-                                    newContent=document.createTextNode(place);
-                                    contentArea.appendChild(newContent);
-                                    textArea.appendChild(contentArea);
-                                }
-                                else if (i==8){
-                                    let textArea=document.getElementById("textarea9");
-                                    let contentArea=document.createElement("div");
-                                    contentArea.className="text";
-                                    newContent=document.createTextNode(place);
-                                    contentArea.appendChild(newContent);
-                                    textArea.appendChild(contentArea);
-                                }
-                                else {
-                                    let textArea=document.getElementById("textarea10");
-                                    let contentArea=document.createElement("div");
-                                    contentArea.className="text";
-                                    newContent=document.createTextNode(place);
-                                    contentArea.appendChild(newContent);
-                                    textArea.appendChild(contentArea);
-                                }
-                                      
-                            }
-
-                            for (let j=0; j<10; j++){
-                                let jpg=info[j]["file"].split("https");
+                                let jpg=info[i]["file"].split("https");
                                 let firstjpg="https"+jpg[1];
-                                if (j==0){
-                                    let graphArea=document.getElementById("graph1");
+                                if (i<2){
+                                    let textArea=document.querySelectorAll(".promotion-textarea");
+                                    let contentArea=document.createElement("div");
+                                    contentArea.className="text";
+                                    let newContent=document.createTextNode(place);
+                                    contentArea.appendChild(newContent);
+                                    textArea[i].appendChild(contentArea);
+
+                                    let graphArea=document.querySelectorAll(".promotion-grapharea");
                                     let graph=document.createElement("img");
                                     graph.className="promotion-graph";
                                     graph.setAttribute("src", firstjpg);
-                                    graphArea.appendChild(graph);
-                                }
-                                else if (j==1){
-                                    let graphArea=document.getElementById("graph2");
-                                    let graph=document.createElement("img");
-                                    graph.className="promotion-graph";
-                                    graph.setAttribute("src", firstjpg);
-                                    graphArea.appendChild(graph);
-                                }
-                                else if (j==2){
-                                    let graphArea=document.getElementById("graph3");
-                                    let graph=document.createElement("img");
-                                    graph.className="title-graph";
-                                    graph.setAttribute("src", firstjpg);
-                                    graphArea.appendChild(graph);
-                                }
-                                else if (j==3){
-                                    let graphArea=document.getElementById("graph4");
-                                    let graph=document.createElement("img");
-                                    graph.className="title-graph";
-                                    graph.setAttribute("src", firstjpg);
-                                    graphArea.appendChild(graph);
-                                }
-                                else if (j==4){
-                                    let graphArea=document.getElementById("graph5");
-                                    let graph=document.createElement("img");
-                                    graph.className="title-graph";
-                                    graph.setAttribute("src", firstjpg);
-                                    graphArea.appendChild(graph);
-                                }
-                                else if (j==5){
-                                    let graphArea=document.getElementById("graph6");
-                                    let graph=document.createElement("img");
-                                    graph.className="title-graph";
-                                    graph.setAttribute("src", firstjpg);
-                                    graphArea.appendChild(graph);
-                                }
-                                else if (j==6){
-                                    let graphArea=document.getElementById("graph7");
-                                    let graph=document.createElement("img");
-                                    graph.className="title-graph";
-                                    graph.setAttribute("src", firstjpg);
-                                    graphArea.appendChild(graph);
-                                }
-                                else if (j==7){
-                                    let graphArea=document.getElementById("graph8");
-                                    let graph=document.createElement("img");
-                                    graph.className="title-graph";
-                                    graph.setAttribute("src", firstjpg);
-                                    graphArea.appendChild(graph);
-                                }
-                                else if (j==8){
-                                    let graphArea=document.getElementById("graph9");
-                                    let graph=document.createElement("img");
-                                    graph.className="title-graph";
-                                    graph.setAttribute("src", firstjpg);
-                                    graphArea.appendChild(graph);
+                                    graphArea[i].appendChild(graph);
                                 }
                                 else {
-                                    let graphArea=document.getElementById("graph10");
+                                    let textArea=document.querySelectorAll(".title-textarea");
+                                    let contentArea=document.createElement("div");
+                                    let j=i-2
+                                    contentArea.className="text";
+                                    let newContent=document.createTextNode(place);
+                                    contentArea.appendChild(newContent);
+                                    textArea[j].appendChild(contentArea);
+
+                                    let graphArea=document.querySelectorAll(".title-grapharea");
                                     let graph=document.createElement("img");
                                     graph.className="title-graph";
                                     graph.setAttribute("src", firstjpg);
-                                    graphArea.appendChild(graph);
+                                    graphArea[j].appendChild(graph);
                                 }
-                                      
-                            }
-                          
+                            }               
                     })
-            }
-            getData();
         </script>
   </body>
 </html>
