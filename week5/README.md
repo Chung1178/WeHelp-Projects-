@@ -35,7 +35,7 @@ SELECT * FROM member ORDER BY time desc;
 
 4. 使⽤ SELECT 指令取得 member 資料表中第 2 ~ 4 共三筆資料，並按照 time 欄位，由近到遠排序。 ( 並非編號 2、3、4 的資料，⽽是排序後的第 2 ~ 4 筆資料 )
 ```
-SELECT * FROM member ORDER BY time desc LIMIT 1,4;
+SELECT * FROM member ORDER BY time desc LIMIT 1,3;
 ```
 ![image3-3](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/3-3.png?raw=true)
 
