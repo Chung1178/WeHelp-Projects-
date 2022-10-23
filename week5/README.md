@@ -1,4 +1,4 @@
-###目標三
+### 目標三
 
 **利⽤要求⼆建立的資料庫和資料表，寫出能夠滿⾜以下要求的 SQL 指令：**
 
@@ -25,6 +25,8 @@ INSERT INTO member(name, username, password, follower_count) VALUES ('Zoe', 'dd'
 ```
 SELECT * FROM member;
 ```
+![image3-1](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/3-3.png?raw=true)
+
 3. 使⽤ SELECT 指令取得所有在 member 資料表中的會員資料，並按照 time 欄位，由近到遠排序。
 ```
 SELECT * FROM member ORDER BY time desc;
@@ -47,7 +49,7 @@ UPDATE member SET name='test2' WHERE username='test';
 ```
 ---
 
-###目標四
+### 目標四
 
 **利⽤要求⼆建立的資料庫和資料表，寫出能夠滿⾜以下要求的 SQL 指令：**
 
@@ -65,7 +67,7 @@ SELECT AVG(follower_count) FROM member;
 ```
 ---
 
-###目標五
+### 目標五
 
 **建立message並insert資訊**
 ```
