@@ -25,28 +25,38 @@ INSERT INTO member(name, username, password, follower_count) VALUES ('Zoe', 'dd'
 ```
 SELECT * FROM member;
 ```
-![image3-1](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/3-3.png?raw=true)
+![image3-1](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/3-1.png?raw=true)
 
 3. 使⽤ SELECT 指令取得所有在 member 資料表中的會員資料，並按照 time 欄位，由近到遠排序。
 ```
 SELECT * FROM member ORDER BY time desc;
 ```
+![image3-2](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/3-2.png?raw=true)
+
 4. 使⽤ SELECT 指令取得 member 資料表中第 2 ~ 4 共三筆資料，並按照 time 欄位，由近到遠排序。 ( 並非編號 2、3、4 的資料，⽽是排序後的第 2 ~ 4 筆資料 )
 ```
 SELECT * FROM member ORDER BY time desc LIMIT 1,4;
 ```
+![image3-3](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/3-3.png?raw=true)
+
 5. 使⽤ SELECT 指令取得欄位 username 是 test 的會員資料。
 ```
 SELECT * FROM member WHERE username='test';
 ```
+![image3-4](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/3-4.png?raw=true)
+
 6. 使⽤ SELECT 指令取得欄位 username 是 test、且欄位 password 也是 test 的資料。
 ```
 SELECT * FROM member WHERE username='test' and password='test';
 ```
+![image3-5](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/3-5.png?raw=true)
+
 7. 使⽤ UPDATE 指令更新欄位 username 是 test 的會員資料，將資料中的 name 欄位改成 test2。
 ```
 UPDATE member SET name='test2' WHERE username='test';
 ```
+![image3-6](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/3-6.png?raw=true)
+
 ---
 
 ### 目標四
@@ -57,14 +67,20 @@ UPDATE member SET name='test2' WHERE username='test';
 ```
 SELECT COUNT(id) FROM member;
 ```
+![image4-1](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/4-1.png?raw=true)
+
 2. 取得 member 資料表中，所有會員 follower_count 欄位的總和。
 ```
 SELECT SUM(follower_count) FROM member;
 ```
+![image4-2](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/4-2.png?raw=true)
+
 3. 取得 member 資料表中，所有會員 follower_count 欄位的平均數。
 ```
 SELECT AVG(follower_count) FROM member;
 ```
+![image4-3](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/4-3.png?raw=true)
+
 ---
 
 ### 目標五
@@ -89,20 +105,28 @@ INSERT INTO message(member_id, content, like_count) VALUES (1, '又是我', 6);
 INSERT INTO message(member_id, content, like_count) VALUES (1, '來騙讚', 8);
 INSERT INTO message(member_id, content, like_count) VALUES (1, '呵呵呵', 2);
 ```
+![image5-1](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/5-1.png?raw=true)
+![image5-1-2](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/5-1-2.png?raw=true)
 
 1. 使⽤ SELECT 搭配 JOIN 語法，取得所有留⾔，結果須包含留⾔者會員的姓名。
 ```
 SELECT member.name, message.content FROM member 
 INNER JOIN message ON member.id=message.member_id;
 ```
+![image5-2](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/5-2.png?raw=true)
+
 2. 使⽤ SELECT 搭配 JOIN 語法，取得 member 資料表中欄位 username 是 test 的所有留⾔，資料中須包含留⾔者會員的姓名。
 ```
 SELECT member.name, message.content FROM member 
 INNER JOIN message ON member.id=message.member_id WHERE member.username="test";
 ```
+![image5-3](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/5-3.png?raw=true)
+
 3. 使⽤ SELECT、SQL Aggregate Functions 搭配 JOIN 語法，取得 member 資料表中欄位 username 是 test 的所有留⾔平均按讚數。
 ```
 SELECT AVG(message.like_count) FROM member 
 INNER JOIN message ON member.id=message.member_id WHERE member.username="test";
 ```
+![image5-4](https://github.com/Chung1178/WeHelp-Projects-/blob/main/week5/5-4.png?raw=true)
+
 ---
