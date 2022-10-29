@@ -12,7 +12,7 @@ app.secret_key="chung@wehelp3"
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="12345678",
+  password="",
   database="website"
 )
 
