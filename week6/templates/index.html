@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Home page</title>
+        <link rel="stylesheet" href="/layout.css"/>
+    </head>
+    <body>
+       <div>
+            <div class="header">
+                <div class="titletext">
+                    歡迎光臨，請註冊登入系統
+                </div>
+            </div>
+            <br/>
+            <div class="content">
+                <b>註冊帳號</b>
+                <br/>
+                <br/>
+                <form action="/signup" method="POST" >
+                    <div>
+                        姓名
+                        <input type="text" name="name"/>
+                    </div>
+                    <br/>
+                    <div>
+                        帳號
+                        <input type="text" name="user"/>
+                    </div>
+                    <br/>
+                    <div>
+                        密碼
+                        <input type="text" name="pw"/>
+                    </div>
+                    <br/>
+                    <button>註冊</button>
+                </form>
+                    <br/>
+                    <br/>
+                <hr/>
+                <b>登入系統</b>
+                <br/>
+                <br/>
+                <form action="/signin" method="POST" >
+                    <div>
+                        帳號
+                        <input type="text" name="user"/>
+                    </div>
+                    <br/>
+                    <div>
+                        密碼
+                        <input type="text" name="pw"/>
+                    </div>
+                    <br/>
+                    <button>登入</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
