@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Member page</title>
+        <link rel="stylesheet" href="/layout.css"/>
+    </head>
+    <body>
+       <div>
+            <div class="header">
+                <div class="titletext">
+                    歡迎光臨，這是會員頁
+                </div>
+            </div>
+            <br/>
+            <div class="content">
+                <span id="name">{{name}}</span>，歡迎登入系統
+                <br/>
+                <br/>
+                <button><a href="/logout">登出</a></button>
+            </div>
+            <hr/>
+            <br/>
+            <br/>
+            <div class="content">
+                <b>快來留言吧</b>
+                <br/>
+                <br/>
+                <form action="/message" method="POST" >
+                    <div>
+                        內容
+                        <input type="text" name="message" placeholder="請輸入留言內容"/>
+                    </div>
+                    <br/>
+                    <button>送出留言</button>
+                </form>
+                <br/>
+                <br/>
+            </div>
+            <hr/>
+            <br/>
+            <div class="content">
+                <b>留言區</b>
+                <br/>
+                <br/>
+                <div>
+                    {% for item in content %}
+                    <b>{{item[0]}} :</b> {{item[1]}}<br/>   
+                    {% endfor %}
+                <br/>
+                </div>
+            </div>
+            <hr/>
+            <br/>
+            <div class="content">
+                <b>查詢會員姓名</b>
+                <br/>
+                <br/>
+                <form action="/api/member" method="GET" >
+                    <div>
+                        <input id="usernameInput" type="text" name="username" placeholder="請輸入帳號"/>
+                        <button onclick="getName()">查詢</button>
+                        <br/>
+                        <br/>
+                        <div id="showName"></div>
+                    </div>
+                    <br/>
+                </form>
+                <br/>
+                <br/>
+            </div>
+            <hr/>
+            <br/>
+            <div class="content">
+                <b>更新我的姓名</b>
+                <br/>
+                <br/>
+                <div>
+                    <input id="updateNameInput" type="text" placeholder="請輸入新名稱"/>
+                    <button onclick="updateName()">更新</button>
+                    <br/>
+                    <br/>
+                    <div id="updateResult"></div>
+                </div>
+                    <br/>
+                <br/>
+                <br/>
+            </div>
+        </div>
+
+        <script>
+            function getName(){
+                event.preventDefault();
+                let URL = "http://127.0.0.1:3000/api/member?username=" + document.getElementById("usernameInput").value;
+                fetch(URL)
+                .then((response) => response.json())
+                .then((accountInfo) => {
+                    if (accountInfo.data == null){
+                        document.getElementById("showName").innerHTML = "查無此帳號";
+                    }
+                    else{
+                        let accountNameInfo = accountInfo.data.name + " (" + accountInfo.data.username + ")";
+                        document.getElementById("showName").innerHTML = accountNameInfo;
+                    }   
+                })
+                .catch((error) => console.log("error"))
+            };
+
+            function updateName(){
+                event.preventDefault();
+                let newname=document.getElementById("updateNameInput").value;
+                fetch("http://127.0.0.1:3000/api/member", {
+                    method:"PATCH",
+                    headers: {"Content-type":"application/json"},
+                    body: JSON.stringify({
+                        "name":newname
+                    }),
+
+                })
+                .then((response) => response.json())
+                .then((result) => {
+                    if (result.ok == true){
+                        document.getElementById("updateResult").innerHTML = "更新成功";
+                        document.getElementById("name").innerHTML = newname;
+                    }
+                    else{
+                        document.getElementById("updateResult").innerHTML = "更新失敗";
+                    }   
+                })
+                .catch((error) => console.log("error"))
+
+            }
+        </script>
+    </body>
+</html>
